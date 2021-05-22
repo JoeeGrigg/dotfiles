@@ -1,3 +1,6 @@
+# SETUP UNATTENDED
+export DEBIAN_FRONTEND=noninteractive
+
 # SETUP APT
 apt update
 apt upgrade -y
@@ -35,3 +38,6 @@ fi
 # INSTALL/UPGRADE NVM
 echo "Insalling & Upgrading NVM..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+# LOAD DOT FILES
+yadm clone https://github.com/JoeeGrigg/dotfiles.git
