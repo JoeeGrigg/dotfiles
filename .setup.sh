@@ -9,7 +9,8 @@ apt install -y \
   curl \
   wget \
   neovim \
-  yadm
+  yadm \
+  mosh
 
 # INSTALL NVIM PLUG
 echo "Installing Vim Plug"
