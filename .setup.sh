@@ -13,7 +13,8 @@ apt install -y \
   wget \
   neovim \
   yadm \
-  mosh
+  mosh \
+  tmux
 
 # INSTALL NVIM PLUG
 echo "Installing Vim Plug"
@@ -41,6 +42,13 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # LOAD DOT FILES
 yadm clone https://github.com/JoeeGrigg/dotfiles.git
+
+# Install Tailscale
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+apt update
+apt install tailscale
+tailscale up
 
 # REBOOT
 reboot
