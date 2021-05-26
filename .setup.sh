@@ -1,9 +1,15 @@
 # SETUP UNATTENDED
 export DEBIAN_FRONTEND=noninteractive
 
-# INSTALL HASHICORP REPO
+# INSTALL REPOS
+
+## HASHICORP
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+## TAILSCALE
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 # SETUP APT
 apt update
@@ -18,7 +24,10 @@ apt install -y \
   neovim \
   yadm \
   mosh \
-  tmux
+  tmux \
+  packer \
+  terraform \
+  tailscale
 
 # INSTALL NVIM PLUG
 echo "Installing Vim Plug"
@@ -47,11 +56,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 # LOAD DOT FILES
 yadm clone https://github.com/JoeeGrigg/dotfiles.git
 
-# Install Tailscale
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.gpg | sudo apt-key add -
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.list | sudo tee /etc/apt/sources.list.d/tailscale.list
-apt update
-apt install tailscale
+# CONFIGURE TAILSCALE
 tailscale up
 
 # REBOOT
