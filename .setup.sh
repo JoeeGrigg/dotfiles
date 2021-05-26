@@ -1,6 +1,10 @@
 # SETUP UNATTENDED
 export DEBIAN_FRONTEND=noninteractive
 
+# INSTALL HASHICORP REPO
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
 # SETUP APT
 apt update
 apt upgrade -y
