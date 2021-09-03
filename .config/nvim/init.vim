@@ -135,6 +135,11 @@ set backspace=2
 " Wrapping
 set nowrap
 
+" Copy & Paste
+set clipboard=unnamedplus
+noremap x "_x
+noremap X "_X
+
 " Update Time
 set updatetime=100
 
