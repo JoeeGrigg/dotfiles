@@ -12,24 +12,19 @@ Plug 'coot/CRDispatcher'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale'
 Plug 'djoshea/vim-autoread'
-Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
-Plug 'jvirtanen/vim-hcl'
-Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 Plug 'mechatroner/rainbow_csv'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'morhetz/gruvbox'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'posva/vim-vue'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+plug 'nvim-treesitter/nvim-treesitter', {'do': ':tsupdate'}
 Plug 'rhysd/git-messenger.vim'
-Plug 'rhysd/vim-crystal'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'sodapopcan/vim-twiggy'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'towolf/vim-helm'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -115,8 +110,11 @@ nmap <silent> <C-D> :NERDTreeToggle<CR>
 nmap <silent> <F1> :NERDTreeToggle<CR>
 " let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
 
-" Helm
-autocmd BufRead,BufNewFile */templates/*.yml,*/templates/*.yaml,*/templates/*.tpl set ft=helm
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
