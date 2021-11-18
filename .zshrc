@@ -8,14 +8,6 @@ COLOR_WHITE=$'\e[0m'
 setopt PROMPT_SUBST
 export PROMPT='${COLOR_RED}[%c]${COLOR_CYAN}$(parse_git_branch)→ ${COLOR_WHITE}'
 
-# History
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=5000
-setopt appendhistory
-setopt sharehistory
-setopt incappendhistory
-
 # Variables
 export EDITOR="nvim"
 
